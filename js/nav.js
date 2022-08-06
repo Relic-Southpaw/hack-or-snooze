@@ -12,7 +12,7 @@ function navAllStories(evt) {
   putStoriesOnPage();
 }
 
-$body.on("click", "#nav-all", navAllStories);
+$body.on("click", "#nav-all", start);
 
 /** Show login/signup on click on "login" */
 
@@ -40,6 +40,7 @@ function navSubmit() {
     navAllStories();
     $newStory.show()
     addNewStory()
+    checkHearts();
   })
 }
 
@@ -50,6 +51,9 @@ $("#favorites").on("click", function () {
 $("#my-stories").on("click", function () {
   navAllStories();
   showMyStories();
+  checkOP();
+  delWorks();
+  checkHearts();
 })
 
 $("#nav-user-profile").on("click", function () {
@@ -61,3 +65,4 @@ $("#nav-user-profile").on("click", function () {
   <p>Username: ${currentUser.username}<p>
   <p>Account Created: ${createDate}</p>`)
 })
+
